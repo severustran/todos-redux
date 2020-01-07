@@ -1,0 +1,16 @@
+{
+  "todoLists": [
+      { 
+        "title": "Go jogging",
+        "isCompleted": true
+      },
+      { 
+        "title": "Reading book",
+        "isCompleted": false
+      },
+      { 
+        "title": "Have breakfast",
+        "isCompleted": true
+      }
+  ]
+}
