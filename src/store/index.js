@@ -1,28 +1,12 @@
-import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import {LOAD} from './reducers'
+import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import loadDataReducer from './reducers/loadDataReducer';
+import { GLOBAL_STATE } from './initState'
 
 //const allReducers = combineReducers(loadTodosReducer, loadTodosAPIReducer);
-const initState = [
-        { 
-            id: "1",
-            title: "Go jogging",
-            isCompleted: true
-        },
-        { 
-            id: "2",
-            title: "Reading book",
-            isCompleted: false
-        },
-        { 
-            id: "3",
-            title: "Have breakfast",
-            isCompleted: true
-        }
-    ];
 
-// const middleware = [thunk];
+const middleware = [thunk];
 // const store = createStore(loadTodosReducer, initState,compose(applyMiddleware(...middleware),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
-const store = createStore(LOAD,initState);
+const store = createStore(loadDataReducer, GLOBAL_STATE, compose(applyMiddleware(...middleware),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 
 export default store;
