@@ -1,5 +1,5 @@
-import { GLOBAL_STATE } from '../initState';
-import { LOAD_DATA } from '../actions/loadDataAction';
+import { GLOBAL_STATE } from '../store/initState';
+import { LOAD_DATA } from '../constants/actionTypes';
 
 const loadData = (state = GLOBAL_STATE, action) => {
     switch (action.type) {
