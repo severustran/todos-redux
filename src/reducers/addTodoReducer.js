@@ -8,7 +8,7 @@ const addTodo = (state = GLOBAL_STATE, action) => {
                 ...state,
                 {
                     id: action.id,
-                    todo: action.todo,
+                    todo: action.title,
                     isCompleted: false
                 }
             ]

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddTodo = (props) => {
+const AddTodo = () => {
     const [input, setInput] = useState({});
 
     const handleOnChange = e => {

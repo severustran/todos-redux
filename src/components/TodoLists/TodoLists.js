@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import TodoItem from '../TodoItem/TodoItem';
 
+
 const TodoLists = ({todos}) => {
     return (
-        <Fragment>
+        <div>
             {
                 todos.map(({title}, index) => <TodoItem key={index} todo={title} />)
             }
-        </Fragment>
+        </div>
     )
 }
 
