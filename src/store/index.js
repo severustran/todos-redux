@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from '../reducers';
+// import rootReducer from '../reducers';
 import { loadData } from '../reducers/todosReducer';
 import { GLOBAL_STATE } from './initState'
 

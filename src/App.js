@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import TodoLists from './components/TodoLists/TodoLists';
-import AddTodo from './components/AddTodo/AddTodo';
+import TodoLists from './components/TodoLists';
+import AddTodo from './components/AddTodo';
 import './App.css';
 // import store from './store'; first way
 import { useSelector, useDispatch } from 'react-redux';

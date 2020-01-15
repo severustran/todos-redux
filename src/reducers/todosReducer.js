@@ -9,14 +9,19 @@ export const loadData = (state = GLOBAL_STATE, action) => {
                 todoLists: action.payload
             }
         case ADD_TODO:
-        return [
-            ...state,
-            {
-                id: action.id,
-                todo: action.title,
-                isCompleted: false
+            console.log(action.payload);
+            return {
+                ...state,
+                todoLists: [...state.todoLists, action.payload]
             }
-        ]
+        // {
+        //     ...state,
+            
+        //     // {
+        //         // id: action.payload.id,
+        //         // todo: action.payload.title,
+        //         // isCompleted: action.payload.isCompleted
+        // }
         default:
             return state;
     }

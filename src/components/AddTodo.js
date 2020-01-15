@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodoAPI } from '../actions/addTodoAction'
 
 const AddTodo = () => {
+    const dispatch = useDispatch();
     const [input, setInput] = useState({});
 
     const handleOnChange = e => {
         setInput({
             ...input,
-            todo: e.target.value
+            title: e.target.value
         });
     }
 
     const handleOnSubmit = e => {
         e.preventDefault();
-        console.log(input);
+        dispatch(addTodoAPI(input));
         handleReset();
     }
 

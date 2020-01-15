@@ -6,7 +6,8 @@ import nextId from 'react-id-generator';
 export const addTodoAPI = ({title}) => dispatch => {
     axios.post(URL, {title})
         .then(res => {
-            dispatch(addTodo(res.data))
+            console.log(res.data);
+            dispatch(addTodo(res.data));
         });
 }
 
@@ -16,7 +17,7 @@ export const addTodo = todos => {
         payload: {
             id: nextId(),
             title: todos.title,
-            isCompleted: false,
+            isCompleted: false
         }
     }
 }
