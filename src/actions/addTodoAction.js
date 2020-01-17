@@ -1,23 +1,22 @@
 import axios from 'axios';
 import { URL } from '../constants/constants';
 import { ADD_TODO } from '../constants/actionTypes';
-import nextId from 'react-id-generator';
 
-export const addTodoAPI = ({title}) => dispatch => {
-    axios.post(URL, {title})
-        .then(res => {
-            console.log(res.data);
-            dispatch(addTodo(res.data));
-        });
-}
+
 
 export const addTodo = todos => {
     return {
         type: ADD_TODO,
         payload: {
-            id: nextId(),
+            id: todos.id,
             title: todos.title,
             isCompleted: false
         }
     }
+}
+export const addTodoAPI = ({title}) => dispatch => {
+    axios.post(URL, {title, isCompleted: false})
+        .then(res => {
+            dispatch(addTodo(res.data));
+        });
 }
