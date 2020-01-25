@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { loadData } from './todosReducer';
+import loadTodoReducer from './todosReducer';
 
 const rootReducer = combineReducers({
-    loadData,
+    todoLists: loadTodoReducer,
 });
 
 export default rootReducer;

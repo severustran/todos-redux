@@ -1,23 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import TodoItem from './TodoItem';
+import React, { Fragment } from 'react';
 
-
-const TodoLists = ({todos}) => {
+const Todo = ({ value }) => {
     return (
-        <div>
-            {
-                todos.map(({title}, index) => <TodoItem key={index} todo={title} />)
-            }
-        </div>
+        <li> {value} </li>
     )
 }
 
-TodoLists.propTypes = {
-    todos: PropTypes.arrayOf(
-        PropTypes.shape({
-            todo: PropTypes.string.isRequired
-        })
+const TodoLists = ({ todos }) => {
+    return (
+        <Fragment>
+            {
+                todos.map(({ id, name }) => (
+                    <Todo key={id} value={name} />
+                ))
+            }
+        </Fragment>
     )
 }
 

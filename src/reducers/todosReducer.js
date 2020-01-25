@@ -1,18 +1,18 @@
 import { GLOBAL_STATE } from '../store/initState';
-import { LOAD_DATA, ADD_TODO } from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 
-export const loadData = (state = GLOBAL_STATE, action) => {
+
+const loadTodoReducer = (state = GLOBAL_STATE, action) => {
     switch (action.type) {
-        case LOAD_DATA:
+        case actionTypes.LOAD_DATA:
             return {
                 ...state,
-                todoLists: action.payload
+                todoLists: []
             }
-        case ADD_TODO:
-            console.log(action.payload);
+        case actionTypes.LOAD_DATA_SUCCESS:
             return {
                 ...state,
-                todoLists: [...state.todoLists, action.payload]
+                todoLists: action.payload.data
             }
         // {
         //     ...state,
@@ -26,3 +26,5 @@ export const loadData = (state = GLOBAL_STATE, action) => {
             return state;
     }
 }
+
+export default loadTodoReducer;
